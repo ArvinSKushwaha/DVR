@@ -1,4 +1,2 @@
-# dvr
+# Discrete Variable Representation
 
-Describe your project here.
-* License: MIT
