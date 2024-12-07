@@ -124,4 +124,7 @@ def compute_ground_energy(
     system = System(n_particles, L, mesh_size)
     H = system.make_hamiltonian(V_central)
 
-    return splin.eigsh(H, k=1, which='SA')[0][0]
+    if (H.count_nonzero() > 0.2 * H.size) and H.size < 10_000**2:
+        return np.linalg.eigvalsh(H.todense()).min()
+    else:
+        return splin.eigsh(H, k=1, which='SA')[0][0]

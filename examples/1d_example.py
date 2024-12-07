@@ -1,11 +1,8 @@
-import matplotlib as mpl
 import numpy as np
 
 from matplotlib import pyplot as plt
 
 from dvr import System
-
-mpl.use('module://matplotlib-backend-sixel')
 
 gauss_potential = lambda x: -4.0 * np.exp(-(x**2) / 4.0)
 s = System(2, 10.0, 500)
@@ -32,5 +29,4 @@ plt.xlabel('$x_1$')
 plt.ylabel('$E$')
 plt.title('Ground and Excited States of 2-Particle System with Gaussian Potential')
 
-fig.show()
 fig.savefig('./plots/1d_example.png')
