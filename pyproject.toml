@@ -1,0 +1,51 @@
+[project]
+name = "dvr"
+version = "0.1.0"
+authors = [
+    { name = "Arvin Kushwaha", email = "arvin.singh.kushwaha@gmail.com" }
+]
+dependencies = [
+    "scipy>=1.14.1",
+    "numpy>=2.0.2",
+    "matplotlib-backend-sixel>=0.1.0",
+    "matplotlib>=3.9.3",
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["dvr"]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint.isort]
+lines-between-types = 1
+relative-imports-order = "closest-to-furthest"
+
+[tool.ruff.format]
+quote-style = "single"
+docstring-code-format = true
+
+[tool.basedpyright]
+typeCheckingMode = "strict"
+reportMissingTypeStubs = false
+reportUnknownParameterType = false
+reportUnknownArgumentType = false
+reportUnknownMemberType = false
+reportUnknownVariableType = false
+reportUnknownLambdaType = false
+reportUntypedFunctionDecorator = false
+reportMissingTypeArgument = false
